@@ -1,156 +1,129 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impulso Web</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberShop</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header class="nav" >
+  <div>Barber Studio</div>
+  <div>
+    <a href="#Inicio">Inicio</a>
+    <a href="#Servicios">Servicios</a>
+    <a href="#Reserva">Turnos</a>
+  </div>
+</header>
 
-  <header>
-    <div class="logo">
-      <img src="Gemini_Generated_Image_2kxod52kxod52kxo.png" alt="Impulso Web">
-      <span>Impulso Web</span>
+<section class="hero reveal "id="Inicio">
+  <div class="hero-content">
+    <h1>CORTE DE PRECISIÓN</h1>
+    <p>Estilo, elegancia y actitud en cada detalle.</p>
+    <a href="#" class="btn">Reservar turno</a>
+  </div>
+</section>
+
+<section class="section reveal ">
+  <div class="split">
+    <img src="https://media.istockphoto.com/id/1973194130/photo/professional-hairdressers-serving-clients-in-salon.jpg?s=612x612&w=0&k=20&c=1oSAExTG7R1vCzU0eCOk8cNUYM3Ty2unKspHKkt53x8=">
+    <div class="text">
+      <h2>Nuestra barbería</h2>
+      <p>Un espacio diseñado para que vivas una experiencia premium.</p>
     </div>
+  </div>
+</section>
 
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <h1>Páginas web que hacen crecer tu negocio</h1>
-      <h2>Diseño profesional, rápido y pensado para conseguir clientes</h2>
-
-      <p>Ayudo a emprendimientos y negocios a tener presencia online y atraer más clientes.</p>
-
-      <a href="#proyectos" class="btn">Ver trabajos</a>
-      <a href="#contacto" class="btn">Contactarme</a>
-
-      <p class="mini-text">✔ Respuesta rápida • ✔ Sin compromiso</p>
+<section class="section reveal ">
+  <div class="split reverse">
+    <img src="https://media.istockphoto.com/id/2234537129/photo/portrait-of-cool-barber.jpg?s=612x612&w=0&k=20&c=st-tFvqynUZ2J1i5Mc4Rk5TN7DDD8Nx3PyHX5FewAXA=">
+    <div class="text">
+      <h2>Estilo único</h2>
+      <p>Cortes modernos y clásicos adaptados a vos.</p>
     </div>
-  </section>
-
- 
-  <section>
-    <p class="mini-info">
-      Diseño moderno • Adaptado a celulares • Enfocado en resultados
-    </p>
-  </section>
-
+  </div>
+</section>
+<section class="section reveal ">
+  <h2>Transformaciones</h2>
   
-  <section class="about">
-    <h2>¿Por qué tener una web?</h2>
-    <p>
-      Hoy la mayoría de las personas busca todo en internet. Si tu negocio no está online,
-      estás perdiendo clientes todos los días. Una página web profesional te ayuda a generar
-      confianza, mostrar lo que hacés y atraer nuevos clientes.
-    </p>
-  </section>
+  <div class="before-after">
+    <img src="https://media.istockphoto.com/id/626416508/photo/hipster-client-visiting-barber-shop.jpg?s=612x612&w=0&k=20&c=rZlPxote8HMR6ZERBk74RPGTVy-OLoE08r2Qj-GCIqM=">
+    <img src="https://media.istockphoto.com/id/1356272678/photo/close-shot-of-a-young-man-beard-while-he-is-sitting-at-a-barbershop.jpg?s=612x612&w=0&k=20&c=rD1LFUkePrSPQ0M44sJQL5Ww8A70xYu2PjRCSQcd3Vo=">
+  </div>
+</section>
 
-  <section class="projects" id="proyectos">
-    <h2>Trabajos realizados</h2>
+<section class="section reveal " id="Servicios">
+  <h2>Servicios</h2>
+  <div class="services">
+    <div class="service-card">Corte</div>
+    <div class="service-card">Barba</div>
+    <div class="service-card">Combo</div>
+  </div>
+</section>
+<section class="section reveal" id="Reserva">
+  <h2>Reservá tu turno</h2>
+  <p>Elegí tu día y te confirmamos por WhatsApp</p>
 
-    <div class="cards">
+  <form class="form">
+    <input type="text" placeholder="Nombre">
+    <input type="date">
+    <input type="time">
+    <button>Reservar</button>
+  </form>
+</section>
+<footer class="footer">
+  © 2026 Barber Studio
+</footer>
+<a href="https://wa.me/549XXXXXXXXXX" class="whatsapp" target="_blank">
+  💬
+</a>
+<div class="cursor"></div>
+<script>
+const elements = document.querySelectorAll('.reveal');
 
-      <div class="card">
-        <h3>Impulso Fitness</h3>
-        <p>Página web para gimnasio enfocada en captar nuevos clientes y mostrar planes.</p>
-        <a href="https://impulsofitness.netlify.app/" class="btn-card">Ver demo</a>
-      </div>
+function revealOnScroll() {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const visible = window.innerHeight - 100;
 
-      <div class="card">
-        <h3>Aura Café</h3>
-        <p>Sitio moderno para mejorar la imagen del negocio y atraer clientes locales.</p>
-        <a href="https://auracafee.netlify.app/" class="btn-card">Ver demo</a>
-      </div>
+    if (top < visible) {
+      el.classList.add('active');
+    }
+  });
+}
 
-      <div class="card">
-        <h3>Barber Shop</h3>
-        <p>tienda de barberia con opcion de reserva de turnos.</p>
-        <a href="https://barbershopprueba.netlify.app/" class="btn-card">Ver demo</a>
-      </div>
+window.addEventListener('scroll', revealOnScroll);
+</script>
+<script>
+window.addEventListener("scroll", function(){
+  const hero = document.querySelector(".hero");
+  let offset = window.scrollY;
+  hero.style.backgroundPositionY = offset * 0.5 + "px";
+});
+</script>
 
-    </div>
-  </section>
+<script>
+const cursor = document.querySelector(".cursor");
 
- 
-  <section class="services" id="servicios">
-    <h2>Servicios</h2>
-
-    <div class="service-container">
-
-      <div class="service-block">
-        <h3>💻 Páginas web</h3>
-        <p>Diseño moderno pensado para atraer clientes.</p>
-      </div>
-
-      <div class="service-block">
-        <h3>🛒 Tiendas online</h3>
-        <p>Vendé tus productos con un sistema simple y efectivo.</p>
-      </div>
-
-      <div class="service-block">
-        <h3>🎨 Rediseño</h3>
-        <p>Mejoro tu web actual para que se vea profesional.</p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="extra">
-    <h2>¿Por qué elegir una página web?</h2>
-
-    <p>Si tu negocio no está online, estás perdiendo oportunidades todos los días.</p>
-
-    <div class="features">
-
-      <div class="card">
-        <h3>Más clientes</h3>
-        <p>Tu negocio disponible las 24 horas.</p>
-      </div>
-
-      <div class="card">
-        <h3>Más confianza</h3>
-        <p>Una web profesional mejora tu imagen.</p>
-      </div>
-
-      <div class="card">
-        <h3>Más ventas</h3>
-        <p>Convertí visitas en clientes reales.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contacto" class="contact">
-    <h2>¿Listo para tener tu página web?</h2>
-
-    <p>Escribime y te muestro cómo podés conseguir más clientes.</p>
-
-    <p class="mini-text">
-      ✔ Respuesta rápida • ✔ Sin compromiso
-    </p>
-
-    <a href="https://wa.me/5493794235676" class="btn">
-      Hablar por WhatsApp
-    </a>
-  </section>
-
-  <a href="https://www.instagram.com/impulsoweb.stdio" target="_blank" class="instagram-float">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-      <path fill="white" d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.4-115-115-115zm0 190c-41.6 0-75-33.4-75-75s33.4-75 75-75 75 33.4 75 75-33.4 75-75 75z"/>
-    </svg>
-  </a>
+document.addEventListener("mousemove", e => {
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
+});
+</script>
+<script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 800);
+});
+</script>
+</body>
+<div id="loader">
+  <h1>BARBER STUDIO</h1>
+</div>
+</html>
 
 </body>
 </html>
