@@ -1,9 +1,11 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* PALETA BARBER */
 :root {
   --bg: #0f0f0f;
   --card: #1a1a1a;
@@ -13,6 +15,7 @@
   --accent: #ffffff;
 }
 
+/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
@@ -20,6 +23,7 @@ body {
   line-height: 1.6;
 }
 
+/* NAV */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -42,6 +46,7 @@ body {
   color: var(--primary);
 }
 
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -81,10 +86,12 @@ body {
   color: black;
 }
 
+/* SECCIONES */
 .section {
   padding: 120px 60px;
 }
 
+/* SPLIT LAYOUT */
 .split {
   display: flex;
   gap: 50px;
@@ -100,10 +107,12 @@ body {
   width: 50%;
 }
 
+/* ALTERNAR */
 .split.reverse {
   flex-direction: row-reverse;
 }
 
+/* SERVICIOS */
 .services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -122,6 +131,7 @@ body {
   border-color: var(--primary);
 }
 
+/* FOOTER */
 .footer {
   padding: 40px;
   text-align: center;
@@ -298,4 +308,96 @@ body {
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease;
   z-index: 999;
+}
+/* ===================== */
+/* 📱 RESPONSIVE PRO */
+/* ===================== */
+
+@media (max-width: 900px){
+
+  /* NAV */
+  .nav {
+    padding: 15px 20px;
+  }
+
+  .nav nav {
+    display: none; /* simplificamos mobile */
+  }
+
+  /* HERO */
+  .hero {
+    height: auto;
+    padding: 120px 20px 60px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* SECCIONES */
+  .section {
+    padding: 80px 20px;
+  }
+
+  /* SPLIT */
+  .split {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .split img,
+  .split .text {
+    width: 100%;
+  }
+
+  /* SERVICES */
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  /* BEFORE AFTER */
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+
+  /* FORM */
+  .form {
+    max-width: 100%;
+  }
+
+  /* WHATSAPP */
+  .whatsapp {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px;
+    font-size: 20px;
+  }
+}
+
+
+
+@media (max-width: 480px){
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 60px 15px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav {
+    padding: 10px 15px;
+  }
 }
