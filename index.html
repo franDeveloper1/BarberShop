@@ -1,129 +1,526 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarberShop</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Bar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="nav" >
-  <div>Barber Studio</div>
-  <div>
-    <a href="#Inicio">Inicio</a>
-    <a href="#Servicios">Servicios</a>
-    <a href="#Reserva">Turnos</a>
-  </div>
-</header>
 
-<section class="hero reveal "id="Inicio">
+<!-- MÚSICA -->
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Reproducir música">
+  <span id="musicIcon">♪</span>
+</button>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">NIGHT BAR</a>
+  <div class="nav-center">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#menu">Menú</a>
+    <a href="#reservas">Reservas</a>
+    <a href="#ubicacion">Ubicación</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENÚ MOBILE -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#nosotros" onclick="closeMobileMenu()">Nosotros</a>
+  <a href="#menu" onclick="closeMobileMenu()">Menú</a>
+  <a href="#reservas" onclick="closeMobileMenu()">Reservas</a>
+  <a href="#ubicacion" onclick="closeMobileMenu()">Ubicación</a>
+</div>
+
+<!-- HERO CON VIDEO DE FONDO -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1600">
+    <source src="https://videos.pexels.com/video-files/2795405/2795405-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/3252185/3252185-hd_1920_1080_25fps.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>CORTE DE PRECISIÓN</h1>
-    <p>Estilo, elegancia y actitud en cada detalle.</p>
-    <a href="#" class="btn">Reservar turno</a>
+    <p class="hero-pretitle">— Bienvenidos al —</p>
+    <h1 class="hero-title">VIVÍ LA<br><em>NOCHE</em><br>COMO NUNCA</h1>
+    <p class="hero-sub">Luces, música y sabores únicos</p>
+    <div class="hero-ctas">
+      <a href="#reservas" class="btn btn-primary">Reservar mesa</a>
+      <a href="#menu" class="btn btn-ghost">Ver menú</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
-<section class="section reveal ">
-  <div class="split">
-    <img src="https://media.istockphoto.com/id/1973194130/photo/professional-hairdressers-serving-clients-in-salon.jpg?s=612x612&w=0&k=20&c=1oSAExTG7R1vCzU0eCOk8cNUYM3Ty2unKspHKkt53x8=">
-    <div class="text">
-      <h2>Nuestra barbería</h2>
-      <p>Un espacio diseñado para que vivas una experiencia premium.</p>
+<!-- NOSOTROS -->
+<section id="nosotros" class="section fade">
+  <div class="about-grid">
+    <div class="about-text">
+      <span class="label">— Nuestra historia —</span>
+      <h2>Más que un bar,<br><em>una experiencia</em></h2>
+      <p>Cada noche en Night Bar es irrepetible. Desde el primer sorbo hasta el último beat, creamos momentos que se quedan grabados. Un espacio diseñado para los que buscan algo más que una salida.</p>
+      <p>Nuestros bartenders son artistas. Cada trago, una obra.</p>
+    </div>
+    <div class="about-visual">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800" alt="Bar nocturno">
+        <div class="about-badge">
+          <span class="badge-num">+8</span>
+          <span class="badge-txt">años de experiencia</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section reveal ">
-  <div class="split reverse">
-    <img src="https://media.istockphoto.com/id/2234537129/photo/portrait-of-cool-barber.jpg?s=612x612&w=0&k=20&c=st-tFvqynUZ2J1i5Mc4Rk5TN7DDD8Nx3PyHX5FewAXA=">
-    <div class="text">
-      <h2>Estilo único</h2>
-      <p>Cortes modernos y clásicos adaptados a vos.</p>
+<!-- COCTELES ANIMADOS -->
+<section class="section-dark fade">
+  <div class="section">
+    <span class="label centered">— Lo que hacemos —</span>
+    <h2 class="centered">Los mejores tragos,<br><em>a cargo de los mejores</em></h2>
+    <div class="drink-anim">
+      <div class="glass-wrap">
+        <div class="glass">
+          <div class="liquid"></div>
+          <div class="bubble b1"></div>
+          <div class="bubble b2"></div>
+          <div class="bubble b3"></div>
+        </div>
+        <div class="stem"></div>
+        <div class="base"></div>
+      </div>
     </div>
   </div>
 </section>
-<section class="section reveal ">
-  <h2>Transformaciones</h2>
-  
-  <div class="before-after">
-    <img src="https://media.istockphoto.com/id/626416508/photo/hipster-client-visiting-barber-shop.jpg?s=612x612&w=0&k=20&c=rZlPxote8HMR6ZERBk74RPGTVy-OLoE08r2Qj-GCIqM=">
-    <img src="https://media.istockphoto.com/id/1356272678/photo/close-shot-of-a-young-man-beard-while-he-is-sitting-at-a-barbershop.jpg?s=612x612&w=0&k=20&c=rD1LFUkePrSPQ0M44sJQL5Ww8A70xYu2PjRCSQcd3Vo=">
+
+<!-- GALERÍA -->
+<section class="section fade">
+  <span class="label">— Nuestro ambiente —</span>
+  <h2>Galería</h2>
+  <div class="galeria">
+    <div class="gal-item tall">
+      <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=600" alt="Cócteles">
+      <div class="gal-overlay">Cócteles</div>
+    </div>
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600" alt="Ambiente">
+      <div class="gal-overlay">Ambiente</div>
+    </div>
+    <div class="gal-item">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" alt="Interior">
+      <div class="gal-overlay">Interior</div>
+    </div>
+    <div class="gal-item wide">
+      <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=900" alt="Noche">
+      <div class="gal-overlay">La noche</div>
+    </div>
   </div>
 </section>
 
-<section class="section reveal " id="Servicios">
-  <h2>Servicios</h2>
-  <div class="services">
-    <div class="service-card">Corte</div>
-    <div class="service-card">Barba</div>
-    <div class="service-card">Combo</div>
+<!-- SIGNATURE DRINKS -->
+<section class="section fade" id="menu">
+  <span class="label">— Nuestras creaciones —</span>
+  <h2>Signature Drinks</h2>
+  <div class="drinks-grid">
+    <div class="drink-card fade-child">
+      <div class="drink-icon">🍸</div>
+      <h3>Neon Martini</h3>
+      <p>Vodka premium, lima exprimida y un toque cítrico que despierta los sentidos.</p>
+      <span class="drink-price">$3.500</span>
+    </div>
+    <div class="drink-card fade-child">
+      <div class="drink-icon">🫙</div>
+      <h3>Dark Mojito</h3>
+      <p>Ron oscuro añejado, menta fresca del huerto y lima natural.</p>
+      <span class="drink-price">$3.800</span>
+    </div>
+    <div class="drink-card featured fade-child">
+      <div class="drink-icon">🥃</div>
+      <h3>Golden Night</h3>
+      <p>Whisky single malt premium con miel artesanal y especias de temporada.</p>
+      <span class="drink-price">$4.500</span>
+      <span class="featured-badge">⭐ Signature</span>
+    </div>
   </div>
 </section>
-<section class="section reveal" id="Reserva">
-  <h2>Reservá tu turno</h2>
-  <p>Elegí tu día y te confirmamos por WhatsApp</p>
 
-  <form class="form">
-    <input type="text" placeholder="Nombre">
-    <input type="date">
-    <input type="time">
-    <button>Reservar</button>
-  </form>
+<!-- LA EXPERIENCIA -->
+<section class="section fade experiencia">
+  <div class="exp-text">
+    <span class="label">— Lo que sentirás —</span>
+    <h2>La<br><em>Experiencia</em></h2>
+    <p>Música en vivo, luces tenues y una atmósfera única. Cada noche es diferente, cada momento inolvidable.</p>
+    <div class="exp-stats">
+      <div class="stat"><span class="stat-num">200+</span><span class="stat-lbl">Noches memorables</span></div>
+      <div class="stat"><span class="stat-num">50+</span><span class="stat-lbl">Tragos en carta</span></div>
+      <div class="stat"><span class="stat-num">5★</span><span class="stat-lbl">Reseñas promedio</span></div>
+    </div>
+  </div>
+  <div class="exp-img">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800" alt="Experiencia">
+  </div>
 </section>
+
+<!-- MENÚ -->
+<section class="section-dark fade">
+  <div class="section">
+    <span class="label centered">— Para todos los gustos —</span>
+    <h2 class="centered">Menú</h2>
+    <div class="menu-grid">
+      <div class="menu-card fade-child">
+        <span class="menu-icon">🍸</span>
+        <h3>Tragos</h3>
+        <p>Clásicos, signature y sin alcohol. Para todos los gustos.</p>
+        <span class="menu-price">Desde $3.000</span>
+      </div>
+      <div class="menu-card fade-child">
+        <span class="menu-icon">🍔</span>
+        <h3>Comida</h3>
+        <p>Picadas, hamburguesas gourmet y platos para compartir.</p>
+        <span class="menu-price">Desde $4.000</span>
+      </div>
+      <div class="menu-card fade-child">
+        <span class="menu-icon">🍰</span>
+        <h3>Postres</h3>
+        <p>El cierre perfecto para una noche perfecta.</p>
+        <span class="menu-price">Desde $2.500</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="section fade">
+  <span class="label">— Lo que dicen —</span>
+  <h2>Nuestros clientes</h2>
+  <div class="reviews">
+    <div class="review fade-child">
+      <div class="stars">★★★★★</div>
+      <p>"La mejor experiencia nocturna de la ciudad. El ambiente es increíble y el servicio impecable."</p>
+      <div class="reviewer">
+        <div class="avatar">JR</div>
+        <span>— Juan Rodríguez</span>
+      </div>
+    </div>
+    <div class="review fade-child">
+      <div class="stars">★★★★★</div>
+      <p>"Ambiente increíble y tragos únicos. Cada visita es diferente. Ya lo recomendé a todos mis amigos."</p>
+      <div class="reviewer">
+        <div class="avatar">ML</div>
+        <span>— Martina López</span>
+      </div>
+    </div>
+    <div class="review fade-child">
+      <div class="stars">★★★★★</div>
+      <p>"Los bartenders son verdaderos artistas. El Golden Night es lo mejor que tomé en mi vida."</p>
+      <div class="reviewer">
+        <div class="avatar">SA</div>
+        <span>— Santiago Álvarez</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section-dark fade">
+  <div class="section">
+    <div class="features">
+      <div class="feature fade-child">
+        <div class="feature-icon">🎧</div>
+        <h3>Música en vivo</h3>
+        <p>DJ sets y bandas en vivo todas las noches de jueves a domingo.</p>
+      </div>
+      <div class="feature fade-child">
+        <div class="feature-icon">🍸</div>
+        <h3>Tragos exclusivos</h3>
+        <p>Recetas únicas preparadas por bartenders con más de 8 años de experiencia.</p>
+      </div>
+      <div class="feature fade-child">
+        <div class="feature-icon">✨</div>
+        <h3>Ambiente premium</h3>
+        <p>Diseño, luces y energía cuidados al detalle para que cada noche sea especial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section class="section fade">
+  <span class="label">— Agenda semanal —</span>
+  <h2>Eventos Especiales</h2>
+  <div class="eventos">
+    <div class="evento fade-child">
+      <span class="evento-dia">JUE</span>
+      <div>
+        <h3>Open Bar Night</h3>
+        <p>Entrada libre hasta las 23hs. DJ en vivo toda la noche.</p>
+      </div>
+    </div>
+    <div class="evento fade-child">
+      <span class="evento-dia">VIE</span>
+      <div>
+        <h3>DJ Night</h3>
+        <p>Música en vivo con DJs invitados nacionales e internacionales.</p>
+      </div>
+    </div>
+    <div class="evento fade-child">
+      <span class="evento-dia">SAB</span>
+      <div>
+        <h3>Noche Temática</h3>
+        <p>Temática especial cada semana. Consultanos para la próxima edición.</p>
+      </div>
+    </div>
+    <div class="evento fade-child">
+      <span class="evento-dia">DOM</span>
+      <div>
+        <h3>Sunset Session</h3>
+        <p>Apertura a las 20hs con música chill y precios especiales hasta las 22hs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section class="section-dark fade">
+  <div class="section horarios-section">
+    <h2 class="centered">Abrimos <em>esta noche</em></h2>
+    <p class="centered sub">Jueves a Domingo — 20:00 a 04:00 hs</p>
+    <div class="centered">
+      <a href="#reservas" class="btn btn-primary">Reservar ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion" class="section fade">
+  <span class="label">— Encontranos —</span>
+  <h2>Ubicación</h2>
+  <p>📍 Estamos en el corazón de la ciudad, ideal para comenzar o terminar la noche.</p>
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps?q=Corrientes,+Argentina&output=embed"
+      width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section id="reservas" class="section fade">
+  <span class="label centered">— Asegurá tu lugar —</span>
+  <h2 class="centered">Reservar Mesa</h2>
+  <div class="reserva-form">
+    <div class="form-group">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" placeholder="Tu nombre">
+    </div>
+    <div class="form-group">
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha">
+    </div>
+    <div class="form-group">
+      <label for="personas">Personas</label>
+      <select id="personas">
+        <option value="">¿Cuántos son?</option>
+        <option>1 persona</option>
+        <option>2 personas</option>
+        <option>3-4 personas</option>
+        <option>5-8 personas</option>
+        <option>+8 personas</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="horario">Horario</label>
+      <select id="horario">
+        <option value="">Elegí un horario</option>
+        <option>20:00 hs</option>
+        <option>21:00 hs</option>
+        <option>22:00 hs</option>
+        <option>23:00 hs</option>
+        <option>00:00 hs</option>
+      </select>
+    </div>
+    <button class="btn btn-primary btn-full" onclick="reservar()">Confirmar reserva</button>
+    <p class="form-note">O contactanos directamente por WhatsApp 👇</p>
+    <a href="https://wa.me/5493794282762" class="btn btn-whatsapp btn-full" target="_blank">
+      Reservar por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-  © 2026 Barber Studio
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h2>NIGHT BAR</h2>
+      <p>Corrientes, Argentina</p>
+      <p>Jue – Dom · 20:00 a 04:00 hs</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegación</h4>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Menú</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#ubicacion">Ubicación</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contacto</h4>
+      <a href="https://wa.me/5493794282762" target="_blank">WhatsApp</a>
+      <a href="#reservas">Hacer una reserva</a>
+      <p class="footer-social">
+        <a href="#">Instagram</a> · <a href="#">Facebook</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Night Bar — Todos los derechos reservados</p>
+  </div>
 </footer>
-<a href="https://wa.me/549XXXXXXXXXX" class="whatsapp" target="_blank">
-  💬
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5493794282762" class="whatsapp-btn" target="_blank" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.524 3.659 1.435 5.163L2 22l4.837-1.435A9.961 9.961 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.966 7.966 0 0 1-4.076-1.112l-.292-.173-3.024.897.897-3.024-.173-.292A7.966 7.966 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
 </a>
-<div class="cursor"></div>
+
+<!-- CANVAS PARTÍCULAS -->
+<canvas id="particles"></canvas>
+
+<script src="main.js"></script>
 <script>
-const elements = document.querySelectorAll('.reveal');
-
-function revealOnScroll() {
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    const visible = window.innerHeight - 100;
-
-    if (top < visible) {
-      el.classList.add('active');
-    }
-  });
+function toggleMusic() {
+  const audio = document.getElementById('musica');
+  const btn = document.getElementById('musicBtn');
+  const icon = document.getElementById('musicIcon');
+  if (audio.paused) {
+    audio.play().catch(() => {});
+    btn.classList.add('playing');
+    icon.textContent = '♫';
+  } else {
+    audio.pause();
+    btn.classList.remove('playing');
+    icon.textContent = '♪';
+  }
 }
 
-window.addEventListener('scroll', revealOnScroll);
-</script>
-<script>
-window.addEventListener("scroll", function(){
-  const hero = document.querySelector(".hero");
-  let offset = window.scrollY;
-  hero.style.backgroundPositionY = offset * 0.5 + "px";
-});
-</script>
+function reservar() {
+  const nombre = document.getElementById('nombre').value;
+  const fecha = document.getElementById('fecha').value;
+  const personas = document.getElementById('personas').value;
+  const horario = document.getElementById('horario').value;
+  if (!nombre || !fecha || !personas || !horario) {
+    alert('Por favor completá todos los campos.');
+    return;
+  }
+  const msg = encodeURIComponent(`Hola! Quiero reservar una mesa.\nNombre: ${nombre}\nFecha: ${fecha}\nPersonas: ${personas}\nHorario: ${horario}`);
+  window.open(`https://wa.me/5493794282762?text=${msg}`, '_blank');
+}
 
-<script>
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", e => {
-  cursor.style.top = e.clientY + "px";
-  cursor.style.left = e.clientX + "px";
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+  this.classList.toggle('active');
 });
-</script>
-<script>
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 800);
-});
-</script>
-</body>
-<div id="loader">
-  <h1>BARBER STUDIO</h1>
-</div>
-</html>
 
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('active');
+}
+
+// IntersectionObserver animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+const childObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const children = entry.target.querySelectorAll('.fade-child');
+      children.forEach((child, i) => {
+        setTimeout(() => child.classList.add('visible'), i * 120);
+      });
+      childObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.drinks-grid, .menu-grid, .reviews, .features, .eventos, .galeria').forEach(el => childObserver.observe(el));
+
+// Galeria images
+const imgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('img').forEach((img, i) => {
+        setTimeout(() => img.classList.add('visible'), i * 100);
+      });
+      imgObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.galeria').forEach(el => imgObserver.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Particles canvas
+(function() {
+  const canvas = document.getElementById('particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: -Math.random() * 0.5 - 0.1,
+      alpha: Math.random() * 0.4 + 0.1
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(200,160,80,${p.alpha})`;
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.y < 0) { p.y = canvas.height; p.x = Math.random() * canvas.width; }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
 </body>
 </html>
